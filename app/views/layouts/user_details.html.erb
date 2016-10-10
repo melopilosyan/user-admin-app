@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @user.full_name %></title>
+    <style type="text/css">
+      .user-details-container {
+        position: relative;
+        padding: 8px;
+        background-color: #fff;
+      }
+      dt {
+        float: left;
+        clear: left;
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: bold;
+        width: 215px; }
+      dd { margin-left: 235px; }
+      .logo {
+        position: absolute;
+        left: 8px;
+        top: 8px;
+      }
+      img { width: 100px; }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

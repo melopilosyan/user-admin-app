@@ -1,0 +1,31 @@
+<h2 class="heading">
+  <span>Listing Users</span>
+  <%= link_to awesome_icon('plus-circle'), new_user_path(user: 'new'), class: 'tools' %>
+</h2>
+
+<table class="users-rows-container table table-hover">
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td class="logo"><%= image_tag user.logo.url(:thumb), class: 'img-circle', size: '60x60' %></td>
+        <td>
+          <div><%= user.full_name %></div>
+          <div><%= user.email %></div>
+          <div><%= user.birthday %></div>
+        </td>
+        <td><%= user.bio %></td>
+        <td class="tools">
+          <span>
+            <%= link_to awesome_icon('info-circle'), user, title: 'View' %>
+            <%= link_to awesome_icon('pencil-square-o'), edit_user_path(user), title: 'Edit' %>
+            <%= link_to awesome_icon('times'), user, title: 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %>
+          </span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

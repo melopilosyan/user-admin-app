@@ -1,0 +1,20 @@
+<%= form_tag login_path do %>
+<div class="form-container">
+  <div class="form-header">User Login</div>
+
+  <div class="form-group<%= ' has-error' if flash[:email] %>">
+    <%= text_field_tag :email, nil, class: 'form-control', placeholder: 'Email' %>
+    <span class="error-msg">Wrong email</span>
+  </div>
+
+  <div class="form-group<%= ' has-error' if flash[:pass] %>">
+    <%= password_field_tag :pass, nil, class: 'form-control', placeholder: 'Password' %>
+    <span class="error-msg">Wrong password</span>
+  </div>
+
+  <div class="form-group footer">
+    <%= link_to 'Or register', new_user_path %>
+    <%= submit_tag :Login %>
+  </div>
+</div>
+<% end %>

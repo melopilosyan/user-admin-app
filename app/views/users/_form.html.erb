@@ -1,0 +1,22 @@
+<%= form_for @user do |f| %>
+  <%= field_for f, :full_name %>
+  <%= field_for f, :email %>
+  <%= field_for f, :password, :password_field %>
+  <% if params[:action] != 'new' %>
+    <div class="form-group">
+      <p class="alert-info">Leave password blank unless want to change.</p>
+    </div>
+  <% end %>
+  <%= field_for f, :password_confirmation, :password_field %>
+  <%= field_for f, :birthday, :date_select %>
+  <%= field_for f, :bio, :text_area %>
+
+  <div class="form-group">
+    <%= image_tag @user.logo.url(:thumb), width: 100, style: 'margin-bottom: 3px' if @user.present? && @user.logo? %>
+    <%= f.file_field :logo %>
+  </div>
+  <div class="form-group footer">
+    <%= form_back_link %>
+    <%= f.submit %>
+  </div>
+<% end %>

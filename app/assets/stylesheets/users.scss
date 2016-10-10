@@ -1,0 +1,150 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+@import "font-awesome";
+
+$main-color: #018a01;
+
+body {
+  background-color: #e9ebee;
+}
+.has-nav-bar {
+  margin-top: 50px;
+
+  .form-container {
+    margin-top: 20px;
+  }
+}
+
+.shadow {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.navbar-default {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: none;
+  border-radius: initial;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.form-container {
+  width: 35%;
+  margin: 10% auto 50px auto;
+  background-color: #fff;
+  border-radius: 5px 5px 0 0 ;
+  @extend .shadow;
+
+  .form-header {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f1f1f1;
+    background-color: $main-color;
+  }
+
+  .form-group {
+    margin: 0;
+    padding: 0 10px 15px;
+
+    input, select, textarea {
+      border-radius: 0 !important;
+    }
+    input[type=submit] {
+      padding: 5px 10px;
+      color: #fff;
+      border: none;
+      background-color: $main-color;
+    }
+
+    .error-msg {
+      display: none;
+      color: #a94442;
+    }
+    .birthday-field {
+      select {
+        @extend .form-control;
+        width: auto;
+        display: inline;
+      }
+    }
+  }
+  .form-group.has-error .error-msg {
+    display: block;
+  }
+
+  .footer {
+    position: relative;
+    text-align: right;
+
+    a {
+      position: absolute;
+      left: 11px;
+      top: 5px;
+      color: $main-color;
+
+      &:hover {
+        color: #004900;
+        background: none;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.heading .tools { float: right; }
+
+.users-rows-container {
+  padding: 8px;
+  background-color: #fff;
+  @extend .shadow;
+
+  .logo {
+    width: 77px;
+  }
+
+  tr:hover .tools span {
+    display: initial;
+  }
+
+  .tools {
+    width: 77px;
+    vertical-align: middle;
+    span { display: none; }
+    a {
+      margin-left: 5px;
+    }
+  }
+}
+
+.user-details-container {
+  position: relative;
+  padding: 8px;
+  background-color: #fff;
+  @extend .shadow;
+
+  .logo {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    img { width: 100px; }
+  }
+
+  .dl-horizontal {
+    dt { width: 215px; }
+    dd { margin-left: 235px; }
+  }
+
+  .tools {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+}
