@@ -18,6 +18,10 @@ body {
   }
 }
 
+a:hover {
+  text-decoration: none !important;
+}
+
 .shadow {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
@@ -31,6 +35,15 @@ body {
   border: none;
   border-radius: initial;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  .nav li:first-child {
+    text-align: right;
+    padding-top: 5px;
+    padding-right: 10px;
+    a {
+      font-size: 13px;
+    }
+  }
 }
 
 .form-container {

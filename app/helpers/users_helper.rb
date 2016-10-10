@@ -11,7 +11,7 @@ module UsersHelper
   def form_back_link
     params[:action] == 'new' && !params[:user].present? ?
         link_to('Or login', login_path) :
-        link_to('Back', @current_user.admin? ? users_path : welcome_path)
+        link_to('Back', params[:user] == 'new' ? users_path : welcome_path)
   end
 
   def field_for(form, field_name, input_type = :text_field)

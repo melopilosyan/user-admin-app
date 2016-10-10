@@ -1,10 +1,13 @@
 <div class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <div class="navbar-brand">User Admin</div>
+      <div class="navbar-brand"><%= link_to 'User Admin', users_path %></div>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to 'Logout', logout_path %></li>
+      <li>
+        <div><%= @current_user.full_name %></div>
+        <div><%= link_to 'Logout', logout_path %></div>
+      </li>
       <% image = image_tag @current_user.logo.url(:thumb), class: 'img-circle', width: 50, title: @current_user.full_name %>
       <li><%= @current_user.admin? || 1 ? link_to(image, user_path(@current_user), style: 'padding: 0') : image %></li>
     </ul>
